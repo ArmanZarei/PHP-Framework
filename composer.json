@@ -1,0 +1,11 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "7"
+    },
+    "require": {
+        "symfony/http-foundation": "^5.2",
+        "symfony/http-client": "^5.2"
+    },
+    "name": "arman/php-framework",
+    "description": "A PHP Framework on top of different components"
+}
