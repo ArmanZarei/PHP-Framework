@@ -1,5 +1,5 @@
 <?php
 
-$name = $_GET['name'];
+$name = $_GET['name'] ?? "Unknown";
 
-printf("Hello %s", $name);
+printf("Hello %s", htmlspecialchars($name, ENT_QUOTES, 'UTF-8'));
