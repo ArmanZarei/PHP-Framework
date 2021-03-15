@@ -1,16 +1,16 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use \Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpClient\HttpClient;
 
 class IndexTest extends TestCase
 {
     public function testHello()
     {
-        $_GET['name'] = 'Fabien';
+        $httpClient = HttpClient::create();
+        $response = $httpClient->request('GET', 'http://localhost/PHP-framework/index.php?name=Arman');
 
-        ob_start();
-        include 'index.php';
-        $content = ob_get_clean();
-
-        $this->assertEquals('Hello Fabien', $content);
+        $this->assertEquals(\Symfony\Component\HttpFoundation\Response::HTTP_OK, $response->getStatusCode());
+        $this->assertEquals('Hello Arman', $response->getContent());
     }
 }
