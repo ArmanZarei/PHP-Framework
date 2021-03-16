@@ -1,13 +1,10 @@
 <?php
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/init.php';
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
-$request = Request::createFromGlobals();
 
 $name = $request->get('name', 'Unknown');
 
-$response = new Response("Hello ".$name, Response::HTTP_OK);
-
+$response->setContent("Hello ".$name);
+$response->setStatusCode(Response::HTTP_OK);
 $response->send();
