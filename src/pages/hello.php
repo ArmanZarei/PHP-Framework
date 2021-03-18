@@ -1,1 +1,1 @@
-<h4>Hello <strong><?php echo $request->get('name', 'Unknown'); ?></strong></h4>
+<h4>Hello <strong><?php echo $name; ?></strong></h4>
